@@ -26,16 +26,14 @@ st.title("""Student Performance Dashboard""")
 df = pd.read_csv("Students.data.csv")
 df.columns = df.columns.str.strip()
 print(df.columns)   
-
-st.subheader("Summary Statistics")
-st.dataframe(filtered_df.describe())
-
 #Filters
 classes = st.multiselect("Select Class:", options=df["class"].unique(), default=df["class"].unique())
 genders = st.multiselect("Select Gender:", options=df["gender"].unique(), default=df["gender"].unique())
 
 filtered_df = df[(df["class"].isin(classes)) & (df["gender"].isin(genders))]
 
+st.subheader("Summary Statistics")
+st.dataframe(filtered_df.describe())
  
 st.subheader("Average GPA by Class")
 fig1, ax1 = plt.subplots()
