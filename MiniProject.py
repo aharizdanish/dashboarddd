@@ -37,7 +37,7 @@ st.dataframe(filtered_df.describe())
  
 st.subheader("Average GPA by Class")
 
-# Use a seaborn light color palette (looks gradient-like)
+# for bar chart
 gradient_palette = sns.color_palette("flare", n_colors=2)
 
 fig1, ax1 = plt.subplots()
