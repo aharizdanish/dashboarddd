@@ -5,23 +5,21 @@ import seaborn as sns
 
 import streamlit as st
 
+import streamlit as st
+
 st.markdown(
     """
-    <div style="background: linear-gradient(to right, #6a11cb, #2575fc);
-                padding: 20px;
-                border-radius: 10px;
-                text-align: center;
-                color: white;
-                font-size: 32px;
-                font-weight: bold;">
-        Student Performance Dashboard
-    </div>
+    <style>
+    .stApp {
+        background: linear-gradient(to bottom right, #74ebd5, #ACB6E5);
+        background-attachment: fixed;
+    }
+    </style>
     """,
     unsafe_allow_html=True
 )
 
-
-st.image("banner.jpeg", use_column_width=True)
+st.image("banner.jpeg", use_container_width=True)
 st.title("""Student Performance Dashboard""")
 
 
