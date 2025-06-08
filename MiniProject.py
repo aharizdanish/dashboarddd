@@ -19,7 +19,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.image("banner.jpeg", use_container_width=True)
+st.image("banner.jpg", use_container_width=True)
 st.title("""Student Performance Dashboard""")
 
 
