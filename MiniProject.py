@@ -66,10 +66,20 @@ st.line_chart(avg_subjects)
  
 #This coding is specifically use for gender distribution using pie chart
 st.subheader("Gender Distribution")
+
 gender_counts = filtered_df["gender"].value_counts()
+
+colors = sns.color_palette("coolwarm", n_colors=len(gender_counts))
+
 fig3, ax3 = plt.subplots()
-ax3.pie(gender_counts, labels=gender_counts.index, autopct="%1.1f%%", startangle=90)
-ax3.axis("equal")
+ax3.pie(
+    gender_counts,
+    labels=gender_counts.index,
+    autopct="%1.1f%%",
+    startangle=90,
+    colors=colors
+)
+ax3.axis("equal")  # Keeps the pie chart circular
 st.pyplot(fig3)
 
 #This coding is specifically use scatter chart to compare between GPA/Gender/Class and subject.
