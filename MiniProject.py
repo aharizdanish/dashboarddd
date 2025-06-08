@@ -27,10 +27,22 @@ df = pd.read_csv("Students.data.csv")
 df.columns = df.columns.str.strip()
 print(df.columns)   
 #Filters
-classes = st.multiselect("Select Class:", options=df["class"].unique(), default=df["class"].unique())
-genders = st.multiselect("Select Gender:", options=df["gender"].unique(), default=df["gender"].unique())
+#classes = st.multiselect("Select Class:", options=df["class"].unique(), default=df["class"].unique())
+#genders = st.multiselect("Select Gender:", options=df["gender"].unique(), default=df["gender"].unique())
 
-filtered_df = df[(df["class"].isin(classes)) & (df["gender"].isin(genders))]
+#filtered_df = df[(df["class"].isin(classes)) & (df["gender"].isin(genders))]
+
+st.markdown("### Filter by Gender")
+show_male = st.checkbox("Male", value=True)
+show_female = st.checkbox("Female", value=True)
+
+gender_filter = []
+if show_male:
+    gender_filter.append("Male")
+if show_female:
+    gender_filter.append("Female")
+
+filtered_df = df[df["gender"].isin(gender_filter)]
 
 st.subheader("Summary Statistics")
 st.dataframe(filtered_df.describe())
