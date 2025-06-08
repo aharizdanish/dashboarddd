@@ -21,7 +21,7 @@ st.markdown(
 )
 
 
-st.image("banner.jpeg", caption=None)
+st.image("banner.jpeg", use_column_width=True)
 st.title("""Student Performance Dashboard""")
 
 
