@@ -3,17 +3,23 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+import streamlit as st
+
 st.markdown(
     """
-    <style>
-    .stApp {
-        background: linear-gradient(to right, #ff9a9e, #fad0c4);
-        background-attachment: fixed;
-    }
-    </style>
+    <div style="background: linear-gradient(to right, #6a11cb, #2575fc);
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                color: white;
+                font-size: 32px;
+                font-weight: bold;">
+        Student Performance Dashboard
+    </div>
     """,
     unsafe_allow_html=True
 )
+
 
 st.image("banner.jpeg", caption=None)
 st.title("""Student Performance Dashboard""")
