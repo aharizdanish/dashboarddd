@@ -36,8 +36,22 @@ st.subheader("Summary Statistics")
 st.dataframe(filtered_df.describe())
  
 st.subheader("Average GPA by Class")
+
+# Use a seaborn light color palette (looks gradient-like)
+gradient_palette = sns.color_palette("coolwarm", n_colors=2)
+
 fig1, ax1 = plt.subplots()
-sns.barplot(data=filtered_df, x="class", y="GPA", hue="gender", ax=ax1)
+
+sns.barplot(
+    data=filtered_df,
+    x="class",
+    y="GPA",
+    hue="gender",
+    ax=ax1,
+    palette=gradient_palette
+)
+
+ax1.set_title("Average GPA by Class and Gender")
 st.pyplot(fig1)
   
 st.subheader("GPA Distribution")
